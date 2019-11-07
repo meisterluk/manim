@@ -64,7 +64,7 @@ class PiCreature(SVGMobject):
             warnings.warn("No %s design with mode %s" %
                           (self.file_name_prefix, mode))
             svg_file = os.path.join(
-                FILE_DIR,
+                os.environ.get('FILE_DIR'),
                 "PiCreatures_plain.svg",
             )
             SVGMobject.__init__(self, mode="plain", file_name=svg_file, **kwargs)
